@@ -1,0 +1,735 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* ---------- promo strip ---------- */
+
+.promo-bar {
+  background: #111;
+  color: #f5f5f5;
+  text-align: center;
+  padding: 6px 10px;
+  font-size: 13px;
+}
+.promo-bar a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* ---------- header ---------- */
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 40px;
+  border-bottom: 1px solid #eee;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.back-btn {
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  cursor: pointer;
+}
+.top-link {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  color: #111;
+}
+
+/* logo */
+
+.header-center {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  background: #e60012;
+  color: #fff;
+  font-weight: 700;
+}
+.logo-text {
+  font-size: 22px;
+  letter-spacing: 0.22em;
+}
+
+/* search & icons */
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  min-width: 220px;
+}
+.search-box input {
+  border: none;
+  outline: none;
+  font-size: 13px;
+}
+.search-icon {
+  font-size: 14px;
+}
+.header-icons {
+  display: flex;
+  gap: 14px;
+  font-size: 18px;
+}
+
+/* ---------- primary nav ---------- */
+
+.primary-nav {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+.nav-link {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  color: #444;
+}
+.nav-link.active {
+  color: #000;
+}
+
+/* ---------- gift hero ---------- */
+
+.gift-hero {
+  display: flex;
+  min-height: calc(100vh - 150px);
+}
+
+.gift-image {
+  flex: 0 0 55%;
+  overflow: hidden;
+}
+.gift-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gift-content {
+  flex: 0 0 45%;
+  padding: 80px 120px 80px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gift-content h1 {
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+.gift-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+  max-width: 560px;
+  margin-bottom: 10px;
+}
+
+/* CTA button */
+
+.gift-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 26px;
+  padding: 14px 40px;
+  border-radius: 999px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* results text */
+
+.results-label {
+  padding: 18px 80px 40px;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #444;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 1000px) {
+  .main-header {
+    padding: 12px 16px;
+  }
+
+  .primary-nav {
+    gap: 16px;
+  }
+
+  .gift-hero {
+    flex-direction: column;
+  }
+
+  .gift-image,
+  .gift-content {
+    flex-basis: auto;
+  }
+
+  .gift-content {
+    padding: 40px 20px 24px;
+  }
+
+  .results-label {
+    padding: 16px 20px 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-header {
+    padding: 10px 16px;
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+
+  .header-center {
+    order: 0;
+    margin: 0 auto;
+  }
+
+  .header-left {
+    order: 1;
+  }
+
+  .header-right {
+    order: 2;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .search-box {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .primary-nav {
+    flex-wrap: wrap;
+    padding-inline: 12px;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gift-content h1 {
+    font-size: 26px;
+  }
+
+  .gift-content p {
+    font-size: 14px;
+  }
+
+  .gift-content {
+    padding: 24px 16px 20px;
+  }
+
+  .results-label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+  }
+}
+.gift-products {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid #eee;
+  background: #ffffff;
+}
+
+.gp-card {
+  border-right: 1px solid #f0f0f0;
+  background: #ffffff;
+}
+.gp-card:last-child {
+  border-right: none;
+}
+
+.gp-img {
+  position: relative;
+  padding: 40px 40px 24px;
+  background: linear-gradient(180deg, #f4f4f4, #ffffff);
+}
+.gp-img img {
+  width: 100%;
+  display: block;
+}
+
+.gp-heart {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #cccccc;
+  background: #ffffff;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.gp-info {
+  padding: 20px 28px 28px;
+}
+.gp-info h3 {
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.gp-price {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.gp-meta {
+  font-size: 13px;
+  color: #666;
+  display: flex;
+  gap: 16px;
+}
+
+@media (max-width: 1100px) {
+  .gift-products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-inline: 16px;
+  }
+}
+@media (max-width: 650px) {
+  .gift-products {
+    grid-template-columns: 1fr;
+    padding-inline: 12px;
+  }
+  .gp-card {
+    border-right: none;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .gp-card:last-child {
+    border-bottom: none;
+  }
+}
+
+
+/* ---------- Gift Finder block ---------- */
+
+.gift-finder-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  background: #000;
+  color: #fff;
+}
+
+/* left side: image with text overlay */
+
+.gift-finder-hero {
+  position: relative;
+  min-height: 420px;
+  background-image: url("https://www.tissotwatches.com/on/demandware.static/-/Library-Sites-Tissot-SharedLibrary/default/dw300a6b38/images/osfquizzes/WatchFinder/Group1644.jpeg"); /* your image */
+  background-size: cover;
+  background-position: center center;
+}
+
+.gift-finder-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 40px;
+  text-align: center;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 20%);
+}
+
+.gift-finder-overlay h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.gift-finder-overlay p {
+  max-width: 640px;
+  line-height: 1.7;
+  font-size: 16px;
+  margin-bottom: 26px;
+}
+
+/* Discover button */
+
+.gift-finder-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 40px;
+  border-radius: 999px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 13px;
+}
+
+/* right side: two products */
+
+.gift-finder-products {
+  background: #f7f7f7;
+  padding: 40px 40px 32px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+/* card layout (same style language as other cards) */
+
+.gf-card {
+  background: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.gf-img {
+  position: relative;
+  padding: 36px 32px 20px;
+  background: linear-gradient(180deg, #f4f4f4, #ffffff);
+}
+
+.gf-img img {
+  width: 100%;
+  display: block;
+}
+
+/* heart icon */
+
+.gf-heart {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background: #ffffff;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* text area */
+
+.gf-info {
+  padding: 18px 24px 22px;
+  color: #111;
+}
+
+.gf-info h3 {
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.gf-price {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.gf-meta {
+  font-size: 13px;
+  color: #666;
+  display: flex;
+  gap: 16px;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 1100px) {
+  .gift-finder-section {
+    grid-template-columns: 1fr;
+  }
+
+  .gift-finder-products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .gift-finder-products {
+    grid-template-columns: 1fr;
+    padding: 24px 16px 28px;
+  }
+
+  .gift-finder-overlay {
+    padding: 40px 20px;
+  }
+
+  .gift-finder-overlay h2 {
+    font-size: 26px;
+  }
+
+  .gift-finder-overlay p {
+    font-size: 14px;
+  }
+}
+
+.site-footer {
+  background: #050505;
+  color: #f5f5f5;
+  padding-top: 40px;
+  font-size: 13px;
+}
+
+/* top row */
+
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80px 40px;
+}
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  background: #e60012;
+  font-weight: 700;
+}
+
+/* perks */
+
+.ft-perks {
+  display: flex;
+  gap: 80px;
+  text-align: center;
+}
+
+.perk {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #ccc;
+}
+
+.perk-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.ft-country {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ccc;
+}
+
+.country-label {
+  text-decoration: underline;
+}
+
+/* divider */
+
+.footer-divider {
+  height: 1px;
+  background: #202020;
+}
+
+/* bottom area */
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 80px 32px;
+  gap: 60px;
+}
+
+/* link columns */
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  gap: 40px;
+  flex: 1 1 auto;
+}
+
+.col h4 {
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.col a {
+  display: block;
+  color: #aaaaaa;
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+
+.col a:hover {
+  color: #ffffff;
+}
+
+/* newsletter */
+
+.footer-newsletter {
+  max-width: 280px;
+}
+
+.footer-newsletter h4 {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.newsletter-input {
+  display: flex;
+  margin-bottom: 20px;
+  border-radius: 999px;
+  border: 1px solid #444;
+  overflow: hidden;
+}
+
+.newsletter-input input {
+  flex: 1;
+  padding: 10px 14px;
+  border: none;
+  background: transparent;
+  color: #f5f5f5;
+  font-size: 13px;
+}
+
+.newsletter-input input::placeholder {
+  color: #777;
+}
+
+.newsletter-input button {
+  width: 48px;
+  border: none;
+  background: #ffffff;
+  color: #000;
+  cursor: pointer;
+}
+
+.social-icons {
+  display: flex;
+  gap: 18px;
+  font-size: 18px;
+}
+
+/* copyright */
+
+.footer-copy {
+  padding: 0 80px 32px;
+  font-size: 12px;
+  color: #777;
+}
+
+/* responsive */
+
+@media (max-width: 1024px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0 24px 32px;
+  }
+
+  .ft-perks {
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    padding: 32px 24px;
+  }
+
+  .footer-columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-copy {
+    padding: 0 24px 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-footer {
+    font-size: 12px;
+  }
+
+  .footer-top {
+    padding: 0 16px 24px;
+  }
+
+  .ft-perks {
+    gap: 20px;
+  }
+
+  .footer-bottom {
+    padding: 24px 16px;
+  }
+
+  .footer-copy {
+    padding: 0 16px 20px;
+  }
+}
